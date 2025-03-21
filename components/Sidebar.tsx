@@ -25,7 +25,7 @@ const items = [
   },
   {
     title: "Contas a Pagar",
-    url: "/contasReceber",
+    url: "/contasPagar",
     icon: Calendar,
   },
   {
@@ -45,7 +45,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Infinity Planner</SidebarGroupLabel>
+          <SidebarGroupLabel>Conta Certa</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

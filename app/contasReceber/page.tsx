@@ -1,55 +1,71 @@
-import { Copy } from "lucide-react"
+import { BellRing, Check } from "lucide-react"
+import * as React from "react"
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function DialogCloseButton() {
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+type CardProps = React.ComponentProps<typeof Card>
+
+export default function CardWithForm() {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Share</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Share link</DialogTitle>
-          <DialogDescription>
-            Anyone who has this link will be able to view this.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="flex items-center space-x-2">
-          <div className="grid flex-1 gap-2">
-            <Label htmlFor="link" className="sr-only">
-              Link
-            </Label>
-            <Input
-              id="link"
-              defaultValue="https://ui.shadcn.com/docs/installation"
-              readOnly
-            />
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="space-y-4 px-4 md:px-8">
+        <div className="grid grid-cols-1 gap-2">
+          <div className="bg-white shadow rounded-lg p-6 justify-between items-center">
+            <Card className="w-[750px]">
+              <CardHeader>
+                <CardTitle>Adicionar receita</CardTitle>
+                <CardDescription>Adicione uma nova receita.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form>
+                  <div className="grid w-full items-center gap-4">
+                    <div className="flex flex-col space-y-1.5">
+                      <Label htmlFor="name">Valor</Label>
+                      <Input id="name" placeholder="R$ 0,00" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <Label htmlFor="framework">Destino</Label>
+                      <Select>
+                        <SelectTrigger id="framework">
+                          <SelectValue placeholder="Selecionar" />
+                        </SelectTrigger>
+                        <SelectContent position="popper">
+                          <SelectItem value="next">Next.js</SelectItem>
+                          <SelectItem value="sveltekit">SvelteKit</SelectItem>
+                          <SelectItem value="astro">Astro</SelectItem>
+                          <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                </form>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button variant="outline">Cancelar</Button>
+                <Button>Adicionar</Button>
+              </CardFooter>
+            </Card>
           </div>
-          <Button type="submit" size="sm" className="px-3">
-            <span className="sr-only">Copy</span>
-            <Copy />
-          </Button>
         </div>
-        <DialogFooter className="sm:justify-start">
-          <DialogClose asChild>
-            <Button type="button" variant="secondary">
-              Close
-            </Button>
-          </DialogClose>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </div>
   )
 }
