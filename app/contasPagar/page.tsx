@@ -32,7 +32,7 @@ export default function CardWithForm() {
             <Card className="w-[750px]">
               <CardHeader>
                 <CardTitle>Adicionar conta</CardTitle>
-                <CardDescription>Adicione um novo gasto.</CardDescription>
+                <CardDescription>Adicione uma nova despesa</CardDescription>
               </CardHeader>
               <CardContent>
                 <form>
