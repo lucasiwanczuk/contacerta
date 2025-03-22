@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
+import { TransactionsTable } from "@/components/TransactionsTable";
 import {
   Card,
   CardContent,
@@ -25,11 +25,11 @@ type CardProps = React.ComponentProps<typeof Card>
 
 export default function CardWithForm() {
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center">
       <div className="space-y-4 px-4 md:px-8">
-        <div className="grid grid-cols-1 gap-2">
+        <div className="grid grid-cols-1 gap-2 w-[1080px]">
           <div className="bg-white shadow rounded-lg p-6 justify-between items-center">
-            <Card className="w-[750px]">
+            <Card>
               <CardHeader>
                 <CardTitle>Adicionar conta</CardTitle>
                 <CardDescription>Adicione uma nova despesa</CardDescription>
@@ -63,6 +63,10 @@ export default function CardWithForm() {
                 <Button>Adicionar</Button>
               </CardFooter>
             </Card>
+          </div>
+          {/* Tabela de transações */}
+          <div className="bg-white shadow rounded-lg p-4">
+            <TransactionsTable />
           </div>
         </div>
       </div>

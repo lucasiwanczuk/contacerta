@@ -20,7 +20,7 @@ export const FinancialChart = () => {
         label: "Receitas",
         data: [3000, 4000, 5000, 5400, 4300, 4400],
         backgroundColor: "rgba(22, 163, 74, 0.7)",
-      },
+      }, 
       {
         label: "Despesas",
         data: [2000, 2500, 3000, 3300, 3200, 3500],
